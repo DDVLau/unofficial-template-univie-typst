@@ -1,0 +1,11 @@
+[package]
+name = "unofficial-template-univie-typst"
+version = "0.1.0"
+entrypoint = ""
+authors = ["Xiaowei Liu <ddvlau@foxmail.com>"]
+license = "MIT"
+description = ""
+repository = ""
+keywords = [""]
+categories = [""]
+compiler = "0.14.2"
