@@ -1,87 +1,27 @@
 // Template - University of Vienna | Universität Wien - Typst version
 // Author: Xiaowei Liu
-// Built based on #link("https://www.overleaf.com/latex/templates/template-university-of-vienna/brhjgbvnzfmn")[UniVie's official Overleaf template]. This repo is under CC BY 4.0.
+// Built based on #link("https://www.overleaf.com/latex/templates/template-university-of-vienna/brhjgbvnzfmn")[UniVie's official Overleaf template]. This Overleaf repo is under CC BY 4.0.
 
-#set page(
-  paper: "a4",
-  margin: (top: 2.5cm, bottom: 2.5cm, left: 2cm, right: 2cm),
-  header: context if not here().page() == 1 {
-    [
-      #grid(
-        columns: (1fr, 1fr),
-        align: (left, right),
-        [
-          #box(width: 3cm, height: 1cm, fill: white)[
-            #align(center)[
-              #figure(image("logo.pdf"))
-            ]
-          ]
-        ],
-        [
-          #text(size: 11pt)[University of Vienna]
-        ],
-      )
-      #v(-0.8em)
-      #line(length: 100%, stroke: 0.5pt)
-    ]
-  },
-  header-ascent: 30%,
-  footer: context if not here().page() == 1 {
-    [
-      #line(length: 100%, stroke: 0.5pt)
-      #grid(
-        columns: (1fr, 1fr, 1fr),
-        align: (left, center, right),
-        [© Jamie Doe], [], context [#counter(page).display() / #counter(page).final().first()],
-      )
-    ]
-  },
-)
+#import "lib.typ": template-univie, title-block, title-logo
 
-// Set font to Source Sans Pro (or similar sans-serif)
-#set text(
-  font: "Source Sans Pro",
-  size: 11pt,
-  lang: "en",
-)
+// Author configuration - change these values as needed
+#let author-name = "Jamie Doe"
+#let author-email = "jamie.doe@univie.ac.at"
 
-// Set link color
-#show link: set text(fill: rgb(0, 99, 166))
+// Apply template with author configuration
+#show: template-univie.with(author-name: author-name, author-email: author-email)
 
-// Set heading numbering
-#set heading(numbering: "1.1")
-
-// Title page logo placeholder
-#align(left)[
-  #box(width: 40%, height: 3cm, fill: white)[
-    #align(center + horizon)[
-      #figure(
-        image("logo.pdf"),
-      )
-    ]
-  ]
-]
+// Title page logo
+#title-logo
 
 #v(1em)
 
-// Title, author, date
-#align(center)[
-  #text(size: 17pt, weight: "bold")[
-    Template - University of Vienna | Universität Wien
-  ]
-
-  #v(1em)
-
-  #text(size: 12pt)[
-    Jamie Doe - #link("mailto:jamie.doe@univie.ac.at")[jamie.doe\@univie.ac.at]
-  ]
-
-  #v(0.5em)
-
-  #text(size: 11pt)[
-    #datetime.today().display("[month repr:long] [day], [year]"), Vienna
-  ]
-]
+// Title, author, date (email automatically gets mailto: prefix)
+#title-block(
+  [Template - University of Vienna | Universität Wien],
+  author: author-name,
+  email: author-email,
+)
 
 #v(2em)
 
