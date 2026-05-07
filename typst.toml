@@ -1,10 +1,10 @@
 [package]
-name = "unofficial-template-univie-typst"
+name = "univie-report-template-typst-unofficial"
 version = "0.1.0"
 entrypoint = ""
-authors = ["Xiaowei Liu <ddvlau@foxmail.com>"]
+authors = ["Nayeli Gast Zepeda <nayeli.gast.zepeda@univie.ac.at>", "Xiaowei Liu <ddvlau@foxmail.com>"]
 license = "MIT"
-description = ""
+description = "Unofficial typst template for Uni Vienna Report"
 repository = ""
 keywords = [""]
 categories = [""]

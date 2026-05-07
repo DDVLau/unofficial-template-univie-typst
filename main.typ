@@ -1,37 +1,34 @@
 // Template - University of Vienna | Universität Wien - Typst version
-// Author: Xiaowei Liu
-// Built based on #link("https://www.overleaf.com/latex/templates/template-university-of-vienna/brhjgbvnzfmn")[UniVie's official Overleaf template]. This Overleaf repo is under CC BY 4.0.
-
 #import "lib.typ": template-univie, title-block, title-logo
 
-// Author configuration - change these values as needed
-#let author-name = "Jamie Doe"
-#let author-email = "jamie.doe@univie.ac.at"
+// Author configuration
+#let author-name = "Author Name"
+#let author-email = "author.name@univie.ac.at"
 
-// Apply template with author configuration
+// Custom commands matching LaTeX definitions
+#let todo(content) = text(fill: orange)[\<TODO: #content\>]
+#let needcite = text(fill: red)[[CITATION NEEDED]]
+#let tempval = text(fill: red)[XX]
+
+// Apply template
 #show: template-univie.with(author-name: author-name, author-email: author-email)
 
 // Title page logo
 #title-logo
 
-#v(1em)
-
-// Title, author, date (email automatically gets mailto: prefix)
+// Title, author, date — matching \maketitle
 #title-block(
-  [Template - University of Vienna | Universität Wien],
+  [Amazing Title],
   author: author-name,
   email: author-email,
 )
 
-#v(2em)
-
 // Table of contents
 #outline(
   title: [Contents],
-  indent: auto,
+  indent: 0pt,
+  depth: 2,
 )
-
-
 
 = Template
 
@@ -74,3 +71,5 @@ A link to the #link("https://www.univie.ac.at")[homepage of the University of Vi
 - and like this.
 
 #lorem(100)
+
+#bibliography("refs.bib", title: "References", style: "ieee")

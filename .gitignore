@@ -1,6 +1,24 @@
-# General
-.vscode
-.idea
-_things
-desktop.ini
+# Typst build artifacts
+# *.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Editor and system files
 .DS_Store
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+.claude/
+
+# Dependencies (if using package managers)
+node_modules/
+.venv/
+venv/
